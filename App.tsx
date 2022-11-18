@@ -28,7 +28,7 @@ const App = () => {
 
         <StackNavigator />
         
-        <StatusBar backgroundColor="#fcec32" />
+        <StatusBar backgroundColor="#ffec0a" />
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
         >

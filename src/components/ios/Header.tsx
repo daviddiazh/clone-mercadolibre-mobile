@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Button, StyleSheet, Text, TextInput, Touchable, TouchableWithoutFeedback, View } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 export const HeaderIOs = ({navigation}: any) => {
@@ -10,11 +10,13 @@ export const HeaderIOs = ({navigation}: any) => {
         <View style={[ styles.container_search ]}>
           <View style={[ styles.input ]}>
             <Icon name="search-outline" color="#8f8f8d" style={{ paddingRight: 10 }} />
-            <Button
-              title='Buscar en Mercado Libre'
+            <TouchableWithoutFeedback
               onPress={ () => navigation.navigate('SearchScreen') }
-            />
-            {/* <TextInput placeholder='Buscar en Mercado Libre'/> */}
+            >
+              <View>
+                <Text>Buscar en Mercado Libre</Text>
+              </View>
+            </TouchableWithoutFeedback>
           </View>
         </View>
 

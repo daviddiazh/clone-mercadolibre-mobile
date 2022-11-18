@@ -9,7 +9,7 @@ export const HeaderMain = ({navigation}: any) => {
       {
         Platform.OS === 'ios'
           ? <HeaderIOs navigation={navigation} /> 
-          : <HeaderAndroid />
+          : <HeaderAndroid navigation={navigation} />
       }
     </View>
   )
