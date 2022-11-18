@@ -41,6 +41,22 @@
 		5709B34CF0A7D63546082F79 /* Pods-cloneMeliMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cloneMeliMobile.release.xcconfig"; path = "Target Support Files/Pods-cloneMeliMobile/Pods-cloneMeliMobile.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-cloneMeliMobile-cloneMeliMobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cloneMeliMobile-cloneMeliMobileTests.debug.xcconfig"; path = "Target Support Files/Pods-cloneMeliMobile-cloneMeliMobileTests/Pods-cloneMeliMobile-cloneMeliMobileTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-cloneMeliMobile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cloneMeliMobile.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EE69D1729274B23000197DE /* Fontisto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Fontisto.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
+		7EE69D1829274B23000197DE /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ionicons.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		7EE69D1929274B23000197DE /* Foundation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Foundation.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
+		7EE69D1A29274B24000197DE /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Feather.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
+		7EE69D1B29274B24000197DE /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome5_Brands.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
+		7EE69D1C29274B24000197DE /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Octicons.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
+		7EE69D1D29274B25000197DE /* Entypo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Entypo.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
+		7EE69D1E29274B25000197DE /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialIcons.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
+		7EE69D1F29274B25000197DE /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialCommunityIcons.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
+		7EE69D2029274B25000197DE /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome5_Regular.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
+		7EE69D2129274B26000197DE /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome5_Solid.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
+		7EE69D2229274B26000197DE /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = EvilIcons.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
+		7EE69D2329274B27000197DE /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		7EE69D2429274B27000197DE /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SimpleLineIcons.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
+		7EE69D2529274B27000197DE /* AntDesign.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AntDesign.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
+		7EE69D2629274B27000197DE /* Zocial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Zocial.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = cloneMeliMobile/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-cloneMeliMobile-cloneMeliMobileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cloneMeliMobile-cloneMeliMobileTests.release.xcconfig"; path = "Target Support Files/Pods-cloneMeliMobile-cloneMeliMobileTests/Pods-cloneMeliMobile-cloneMeliMobileTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -106,6 +122,29 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7EE69D16292749E9000197DE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				7EE69D2529274B27000197DE /* AntDesign.ttf */,
+				7EE69D1D29274B25000197DE /* Entypo.ttf */,
+				7EE69D2229274B26000197DE /* EvilIcons.ttf */,
+				7EE69D1A29274B24000197DE /* Feather.ttf */,
+				7EE69D2329274B27000197DE /* FontAwesome.ttf */,
+				7EE69D1B29274B24000197DE /* FontAwesome5_Brands.ttf */,
+				7EE69D2029274B25000197DE /* FontAwesome5_Regular.ttf */,
+				7EE69D2129274B26000197DE /* FontAwesome5_Solid.ttf */,
+				7EE69D1729274B23000197DE /* Fontisto.ttf */,
+				7EE69D1929274B23000197DE /* Foundation.ttf */,
+				7EE69D1829274B23000197DE /* Ionicons.ttf */,
+				7EE69D1F29274B25000197DE /* MaterialCommunityIcons.ttf */,
+				7EE69D1E29274B25000197DE /* MaterialIcons.ttf */,
+				7EE69D1C29274B24000197DE /* Octicons.ttf */,
+				7EE69D2429274B27000197DE /* SimpleLineIcons.ttf */,
+				7EE69D2629274B27000197DE /* Zocial.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +155,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				7EE69D16292749E9000197DE /* Fonts */,
 				13B07FAE1A68108700A75B9A /* cloneMeliMobile */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* cloneMeliMobileTests */,

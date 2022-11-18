@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
   mainApplication: {
     padding: 0,
     margin: 0,
-    backgroundColor: '#fcec32',
+    backgroundColor: '#ffec0a', //ios
     // fontFamily: 'sans-serif'
     // height: '100%',
   }
