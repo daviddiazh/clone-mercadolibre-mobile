@@ -3,12 +3,12 @@ import { Platform, View } from 'react-native';
 import { HeaderIOs } from './ios/Header';
 import { HeaderAndroid } from './android/Header';
 
-export const HeaderMain = () => {
+export const HeaderMain = ({navigation}: any) => {
   return (
     <View>
       {
         Platform.OS === 'ios'
-          ? <HeaderIOs /> 
+          ? <HeaderIOs navigation={navigation} /> 
           : <HeaderAndroid />
       }
     </View>

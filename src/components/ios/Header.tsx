@@ -1,8 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, TextInput, View } from 'react-native';
+import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-export const HeaderIOs = () => {
+export const HeaderIOs = ({navigation}: any) => {
   return (
     <View style={[ styles.main ]}>
       <View style={[ styles.header ]}>
@@ -10,9 +10,11 @@ export const HeaderIOs = () => {
         <View style={[ styles.container_search ]}>
           <View style={[ styles.input ]}>
             <Icon name="search-outline" color="#8f8f8d" style={{ paddingRight: 10 }} />
-            <TextInput
-              placeholder="Buscar en Mercado Libre"
+            <Button
+              title='Buscar en Mercado Libre'
+              onPress={ () => navigation.navigate('SearchScreen') }
             />
+            {/* <TextInput placeholder='Buscar en Mercado Libre'/> */}
           </View>
         </View>
 
