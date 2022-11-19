@@ -12,5 +12,5 @@ export const HeaderMain = ({navigation}: any) => {
           : <HeaderAndroid navigation={navigation} />
       }
     </View>
-  )
+  );
 }

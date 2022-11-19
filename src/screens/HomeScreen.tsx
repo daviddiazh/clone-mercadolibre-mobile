@@ -1,5 +1,5 @@
-import React from 'react';
-import { StyleSheet, View, Text, Image, Platform, ScrollView } from 'react-native';
+import React, { Fragment } from 'react';
+import { StyleSheet, View, Text, Image, Platform, ScrollView, Button } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { HeaderMain } from '../components/HeaderMain';
 import { PropsNavigation } from '../interfaces/IPropsNavigator';
@@ -8,11 +8,12 @@ import IconMCI from 'react-native-vector-icons/MaterialCommunityIcons';
 export const HomeScreen = ({ navigation }: PropsNavigation) => {
 
   return (
-    <ScrollView
+    <Fragment>
+      <HeaderMain navigation={navigation} />
+      <ScrollView
       contentInsetAdjustmentBehavior="automatic"
     >
       <View style={[ styles.main ]}>
-        <HeaderMain navigation={navigation} />
 
         <LinearGradient
           colors={[ '#ffec0a', '#ebebeb' ]}
@@ -53,6 +54,7 @@ export const HomeScreen = ({ navigation }: PropsNavigation) => {
 
       </View>
     </ScrollView>
+    </Fragment>
   )
 }
 

@@ -1,23 +1,25 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableWithoutFeedback, View } from 'react-native';
+import { StyleSheet, Text, TextInput, TouchableWithoutFeedback, View } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 export const HeaderIOs = ({navigation}: any) => {
+  
   return (
     <View style={[ styles.main ]}>
       <View style={[ styles.header ]}>
-
         <View style={[ styles.container_search ]}>
-          <View style={[ styles.input ]}>
-            <Icon name="search-outline" color="#8f8f8d" style={{ paddingRight: 10 }} />
-            <TouchableWithoutFeedback
-              onPress={ () => navigation.navigate('SearchScreen') }
-            >
-              <View>
-                <Text>Buscar en Mercado Libre</Text>
-              </View>
-            </TouchableWithoutFeedback>
-          </View>
+          <TouchableWithoutFeedback
+            onPress={ () => navigation.navigate('SearchScreen') } 
+          >
+            <View style={[ styles.input ]}>
+              <Icon name="search-outline" color="#8f8f8d" style={{ paddingRight: 10 }} />
+                <View>
+                  <Text>Buscar en Mercado Libre</Text>
+                </View>
+              
+              {/* <TextInput placeholder='Buscar en Mercado Libre' /> */}
+            </View>
+          </TouchableWithoutFeedback>
         </View>
 
         <Icon name="cart-outline" color="#000" size={20} />
