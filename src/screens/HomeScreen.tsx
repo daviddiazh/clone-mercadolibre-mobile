@@ -134,6 +134,40 @@ export const HomeScreen = ({ navigation }: PropsNavigation) => {
               </View>
             </View>
 
+
+            <View 
+              style={[ 
+                styles.offerContainer,
+              ]}
+            >
+              <Text style={[ styles.seenProductOften_text ]}>Oferta del día</Text>
+              <Image
+                source={require('../images/tv.webp')}
+                style={[
+                  styles.offer_image, 
+                ]}
+              />
+              <View>
+                <Text style={[ styles.seenProductOften_titleProduct ]}>Smart TV 32 HD - Accede a Netflix, YouTube, Prime video o navega en internet con un Tv Smart Marca EVL.</Text>
+                <View style={[ styles.offer_priceContainer ]}>
+                  <Text style={[ styles.seenProductOften_priceProduct ]}>$ 900.299</Text>
+                  <Text style={[ styles.seenProductOften_discount ]}>35% OFF</Text>
+                </View>
+                <Text style={[ styles.seenProductOften_freeDelivery ]}>Envío gratis</Text>
+              </View>
+              <View 
+                style={[
+                  Platform.OS === 'ios' ? {'marginTop': 15} : {'marginTop': 15},
+                  styles.seenProductOften_moreInfo,
+                ]}
+              >
+                <Text style={[ styles.seenProductOften_moreInfo_text ]}>Ver historial de navegación</Text>
+                <IconFA name="angle-right" color="#1259c3" size={17} />
+              </View>
+            </View>
+
+
+
           </View>
 
         </View>
@@ -172,6 +206,7 @@ const styles = StyleSheet.create({
 
   containerHome: {
     padding: 10,
+    marginBottom: 70
   },
 
   firstSection: {
@@ -244,7 +279,7 @@ const styles = StyleSheet.create({
   seenProductOften_text: {
     color: '#000',
     fontWeight: "700",
-    fontSize: 13,
+    fontSize: 15,
   },
 
   seenProductOften_insideContainer: {
@@ -261,7 +296,7 @@ const styles = StyleSheet.create({
   seenProductOften_titleProduct: {
     color: '#333',
     paddingTop: 10,
-    fontSize: 12.5
+    fontSize: 13
   },
 
   seenProductOften_containerPrice: {
@@ -271,7 +306,7 @@ const styles = StyleSheet.create({
 
   seenProductOften_priceProduct: {
     paddingVertical: 5,
-    fontSize: 16.5,
+    fontSize: 17,
     color: '#000',
     fontWeight: "500"
   },
@@ -297,6 +332,27 @@ const styles = StyleSheet.create({
     color: '#1259c3',
     fontWeight: "600",
     fontSize: 11
+  },
+
+  offerContainer: {
+    backgroundColor: '#fff',
+    borderRadius: 4,
+    shadowColor: 'rgba(0, 0, 0, 0.1)',
+    shadowOffset: {width: -2, height: 4},
+    shadowOpacity: 0.5,
+    shadowRadius: 4,
+    padding: 10,
+    marginTop: 15
+  },
+
+  offer_image: {
+    width: '100%',
+    resizeMode: 'contain'
+  },
+
+  offer_priceContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',  
   }
 
 });
