@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text, Button, Image, Platform, ScrollView } from 'react-native';
+import { StyleSheet, View, Text, Image, Platform, ScrollView } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { HeaderMain } from '../components/HeaderMain';
 import { PropsNavigation } from '../interfaces/IPropsNavigator';
@@ -85,6 +85,7 @@ const styles = StyleSheet.create({
 
   containerHome: {
     padding: 10,
+    height: 800
   },
 
   firstSection: {

@@ -1,8 +1,7 @@
 import React from 'react'
-import { Button, StyleSheet, Text, TextInput, View } from 'react-native'
-import { HeaderMain } from '../components/HeaderMain';
-import { PropsNavigation } from '../interfaces/IPropsNavigator';
+import { StyleSheet, Text, TextInput, View } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons';
+import { PropsNavigation } from '../interfaces/IPropsNavigator';
 
 export const SearchScreen = ({ navigation }: PropsNavigation) => {
   return (

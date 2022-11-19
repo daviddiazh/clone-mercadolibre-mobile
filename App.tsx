@@ -1,22 +1,14 @@
 import 'react-native-gesture-handler';
 
-import React, { Fragment } from 'react';
+import React from 'react';
 import {
-  Platform,
   SafeAreaView,
-  ScrollView,
   StatusBar,
   StyleSheet,
-  Text,
-  View,
 } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native'
-import { HomeScreen } from './src/screens/HomeScreen';
 import { StackNavigator } from './src/navigator/StackNavigator';
 import { FooterMenuMain } from './src/components/FooterMenu/FooterMenuMain';
-
-// import { createNativeStackNavigator } from '@react-navigation/native-stack';
-// import { SearchScreen } from './src/screens/SearchScreen';
 
 const App = () => {
 
