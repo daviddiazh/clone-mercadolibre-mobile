@@ -6,6 +6,7 @@ import { PropsNavigation } from '../interfaces/IPropsNavigator';
 import { HeaderMain } from '../components/HeaderMain';
 import IconFA from 'react-native-vector-icons/FontAwesome';
 import IconIO from 'react-native-vector-icons/Ionicons';
+import { FooterMenuMain } from '../components/FooterMenu/FooterMenuMain';
 
 export const HomeScreen = ({ navigation }: PropsNavigation) => {
 
@@ -13,95 +14,96 @@ export const HomeScreen = ({ navigation }: PropsNavigation) => {
     <Fragment>
       <HeaderMain navigation={navigation} />
       <ScrollView
-      contentInsetAdjustmentBehavior="automatic"
-    >
-      <View style={[ styles.main ]}>
+        contentInsetAdjustmentBehavior="automatic"
+      >
+        <View style={[ styles.main ]}>
 
-        <LinearGradient
-          colors={[ '#ffec0a', '#ebebeb' ]}
-          style={{ height: 180 }}
-        />
-        <Image
-          source={require('../images/mainBanner.jpeg')}
-          style={[ 
-            Platform.OS === 'ios' ? {'marginTop': -360} : {'marginTop': -340},
-            Platform.OS === 'ios' ? styles.imageIOs : styles.imageAndroid
-          ]}
-        />
-
-        <View 
-          style={[
-            styles.containerHome,
-            Platform.OS === 'ios' ? {'marginTop': -185} : {'marginTop': -160}
-          ]}
-        >
-
-          <View 
-            style={[
-              styles.firstSection,
-            ]}
-          >
-            <Text style={[ styles.firstSection_blackText ]}>
-              <IconMCI name="truck-cargo-container" color="rgb(0, 166, 80)" /> <Text style={[ styles.firstSection_greenText ]}>Envío gratis</Text> en millones de productos desde 70.000
-            </Text>
-          </View>
-
-
-          <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
-
-            <View>
-              <View style={[ styles.container_icon]}>
-                <IconFA 
-                  name="tag" 
-                  color="#1259c3" 
-                  style={{ fontSize: 20, textAlign: 'center', }}
-                />
-              </View>
-              <Text style={[ styles.text, styles.blueText ]}>Ofertas</Text>
-            </View>
-
-            <View>
-              <View style={[ styles.container_icon]}>
-                <IconMCI name="shopping-outline" style={[ styles.icon]}  />
-              </View>
-              <Text style={[ styles.text ]}>Súper</Text>
-            </View>
-
-            <View>
-              <View style={[ styles.container_icon]}>
-                <IconIO name="md-car-sport-outline" style={[ styles.icon]}  />
-              </View>
-              <Text style={[ styles.text ]}>Vehículos</Text>
-            </View>
-
-            <View>
-              <View style={[ styles.container_icon]}>
-                <IconIO name="shirt-outline" style={[ styles.icon]}  />
-              </View>
-              <Text style={[ styles.text ]}>Moda</Text>
-            </View>
-
-            <View>
-              <View style={[ styles.container_icon]}>
-                <IconIO name="add" style={[ styles.icon]}  />
-              </View>
-              <Text style={[ styles.text ]}>Ver más</Text>
-            </View>
-
-          </View>
-
+          <LinearGradient
+            colors={[ '#ffec0a', '#ebebeb' ]}
+            style={{ height: 180 }}
+          />
           <Image
-            source={require('../images/banner2.jpeg')}
+            source={require('../images/mainBanner.jpeg')}
             style={[ 
-              Platform.OS === 'ios' ? {'marginTop': -80} : {'marginTop': -70},
-              Platform.OS === 'ios' ? styles.imageIOs2 : styles.imageAndroid2
+              Platform.OS === 'ios' ? {'marginTop': -360} : {'marginTop': -340},
+              Platform.OS === 'ios' ? styles.imageIOs : styles.imageAndroid
             ]}
           />
 
-        </View>
+          <View 
+            style={[
+              styles.containerHome,
+              Platform.OS === 'ios' ? {'marginTop': -180} : {'marginTop': -160}
+            ]}
+          >
 
-      </View>
-    </ScrollView>
+            <View 
+              style={[
+                styles.firstSection,
+              ]}
+            >
+              <Text style={[ styles.firstSection_blackText ]}>
+                <IconMCI name="truck-cargo-container" color="rgb(0, 166, 80)" /> <Text style={[ styles.firstSection_greenText ]}>Envío gratis</Text> en millones de productos desde 70.000
+              </Text>
+            </View>
+
+
+            <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
+
+              <View>
+                <View style={[ styles.container_icon]}>
+                  <IconFA 
+                    name="tag" 
+                    color="#1259c3" 
+                    style={{ fontSize: 20, textAlign: 'center', }}
+                  />
+                </View>
+                <Text style={[ styles.text, styles.blueText ]}>Ofertas</Text>
+              </View>
+
+              <View>
+                <View style={[ styles.container_icon]}>
+                  <IconMCI name="shopping-outline" style={[ styles.icon]}  />
+                </View>
+                <Text style={[ styles.text ]}>Súper</Text>
+              </View>
+
+              <View>
+                <View style={[ styles.container_icon]}>
+                  <IconIO name="md-car-sport-outline" style={[ styles.icon]}  />
+                </View>
+                <Text style={[ styles.text ]}>Vehículos</Text>
+              </View>
+
+              <View>
+                <View style={[ styles.container_icon]}>
+                  <IconIO name="shirt-outline" style={[ styles.icon]}  />
+                </View>
+                <Text style={[ styles.text ]}>Moda</Text>
+              </View>
+
+              <View>
+                <View style={[ styles.container_icon]}>
+                  <IconIO name="add" style={[ styles.icon]}  />
+                </View>
+                <Text style={[ styles.text ]}>Ver más</Text>
+              </View>
+
+            </View>
+
+            <Image
+              source={require('../images/banner2.jpeg')}
+              style={[ 
+                Platform.OS === 'ios' ? {'marginTop': -80} : {'marginTop': -70},
+                Platform.OS === 'ios' ? styles.imageIOs2 : styles.imageAndroid2
+              ]}
+            />
+
+          </View>
+
+        </View>
+      </ScrollView>
+      <FooterMenuMain navigation={navigation} />
     </Fragment>
   )
 }

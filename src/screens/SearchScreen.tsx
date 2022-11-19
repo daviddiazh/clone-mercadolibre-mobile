@@ -12,7 +12,11 @@ export const SearchScreen = ({ navigation }: PropsNavigation) => {
         <View style={[ styles.container_search ]}>
           <View style={[ styles.input ]}>
             <Icon name="search-outline" color="#8f8f8d" style={{ paddingRight: 10 }} />
-            <TextInput placeholder='Buscar en Mercado Libre' placeholderTextColor={"grey"} />
+            <TextInput 
+              placeholder='Buscar en Mercado Libre' 
+              placeholderTextColor={"grey"} 
+              autoFocus={true}
+            />
           </View>
         </View>
 
