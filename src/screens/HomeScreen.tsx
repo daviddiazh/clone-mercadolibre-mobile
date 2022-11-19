@@ -5,7 +5,9 @@ import IconMCI from 'react-native-vector-icons/MaterialCommunityIcons';
 import { PropsNavigation } from '../interfaces/IPropsNavigator';
 import { HeaderMain } from '../components/HeaderMain';
 import IconFA from 'react-native-vector-icons/FontAwesome';
+import IconF from 'react-native-vector-icons/Feather';
 import IconIO from 'react-native-vector-icons/Ionicons';
+import IconMI from 'react-native-vector-icons/MaterialIcons';
 import { FooterMenuMain } from '../components/FooterMenu/FooterMenuMain';
 
 export const HomeScreen = ({ navigation }: PropsNavigation) => {
@@ -166,7 +168,71 @@ export const HomeScreen = ({ navigation }: PropsNavigation) => {
               </View>
             </View>
 
+            <Image
+              source={require('../images/fromUSA.jpeg')}
+              style={[
+                styles.imageFromUSA,
+                Platform.OS === 'ios' ? {'marginTop': -380} : {'marginTop': -340},
+              ]}
+            />
 
+            <View 
+              style={[ 
+                styles.categoriesContainer,
+                Platform.OS === 'ios' ? {'marginTop': -385} : {'marginTop': -340},
+              ]}
+            >
+              <Text style={[ styles.seenProductOften_text ]}>Categorias</Text>
+
+              <View style={[ styles.categoryContainer ]}>
+                <IconFA 
+                  name="mobile-phone" 
+                  style={{ 
+                    fontSize: 22,
+                    color: '#1259c3',
+                    paddingHorizontal: 15,
+                    paddingRight: 24
+                  }} 
+                />
+                <Text style={[ styles.categoryText ]}>Celulares y Teléfonos</Text>
+              </View>
+
+              <View style={[ styles.categoryContainer ]}>
+                <IconMI name="laptop-mac" style={[ styles.categoryIcon ]} />
+                <Text style={[ styles.categoryText ]}>Computación</Text>
+              </View>
+
+              <View style={[ styles.categoryContainer ]}>
+                <IconMCI name="lipstick" style={[ styles.categoryIcon ]} />
+                <Text style={[ styles.categoryText ]}>Belleza y Cuidado Personal</Text>
+              </View>
+
+              <View style={[ styles.categoryContainer ]}>
+                <IconF name="mic" style={[ styles.categoryIcon ]} />
+                <Text style={[ styles.categoryText ]}>Electrónica, Audio y Video</Text>
+              </View>
+
+              <View style={[ styles.categoryContainer ]}>
+                <IconIO name="md-football-outline" style={[ styles.categoryIcon ]} />
+                <Text style={[ styles.categoryText ]}>Deportes y Fitness</Text>
+              </View>
+
+              <View style={[ styles.categoryContainer ]}>
+                <IconIO name="car-outline" style={[ styles.categoryIcon ]} />
+                <Text style={[ styles.categoryText ]}>Carros, Motos y Otros</Text>
+              </View>
+
+              <View 
+                style={[
+                  Platform.OS === 'ios' ? {'marginTop': 15} : {'marginTop': 15},
+                  styles.seenProductOften_moreInfo,
+                ]}
+              >
+                <Text style={[ styles.seenProductOften_moreInfo_text ]}>Ver todas las categorías</Text>
+                <IconFA name="angle-right" color="#1259c3" size={17} />
+              </View>
+
+            </View>
 
           </View>
 
@@ -353,6 +419,37 @@ const styles = StyleSheet.create({
   offer_priceContainer: {
     flexDirection: 'row',
     alignItems: 'center',  
-  }
+  },
+
+  imageFromUSA: {
+    width: '100%',
+    resizeMode: 'contain',
+  },
+
+  categoriesContainer: {
+    backgroundColor: '#fff',
+    borderRadius: 4,
+    shadowColor: 'rgba(0, 0, 0, 0.1)',
+    shadowOffset: {width: -2, height: 4},
+    shadowOpacity: 0.5,
+    shadowRadius: 4,
+    padding: 10,
+  },
+
+  categoryContainer: {
+    flexDirection: 'row',
+    paddingVertical: 20
+  },
+
+  categoryIcon: {
+    fontSize: 20,
+    color: '#1259c3',
+    paddingHorizontal: 15
+  },
+
+  categoryText: {
+    color: '#333',
+    fontSize: 12
+  },
 
 });
