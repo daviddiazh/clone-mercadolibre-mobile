@@ -99,6 +99,41 @@ export const HomeScreen = ({ navigation }: PropsNavigation) => {
               ]}
             />
 
+            <View 
+              style={[ 
+                styles.seenProductOftenContainer,
+                Platform.OS === 'ios' ? {'marginTop': -75} : {'marginTop': -60},
+              ]}
+            >
+              <Text style={[ styles.seenProductOften_text ]}>Visto recientemente</Text>
+              <View style={[ styles.seenProductOften_insideContainer ]}>
+                <Image
+                  source={require('../images/iphone.webp')}
+                  style={[
+                    styles.seenProductOften_image,
+                    Platform.OS === 'ios' ? {'marginTop': -50} : {'marginTop': -40},
+                  ]}
+                />
+                <View>
+                  <Text style={[ styles.seenProductOften_titleProduct ]}>Celular iPhone 13 Pro Max 128gb</Text>
+                  <View style={[ styles.seenProductOften_containerPrice ]}>
+                    <Text style={[ styles.seenProductOften_priceProduct ]}>$ 6.299.000</Text>
+                    <Text style={[ styles.seenProductOften_discount ]}>13% OFF</Text>
+                  </View>
+                  <Text style={[ styles.seenProductOften_freeDelivery ]}>Envío gratis</Text>
+                </View>
+              </View>
+              <View 
+                style={[
+                  Platform.OS === 'ios' ? {'marginTop': -45} : {'marginTop': -35},
+                  styles.seenProductOften_moreInfo,
+                ]}
+              >
+                <Text style={[ styles.seenProductOften_moreInfo_text ]}>Ver historial de navegación</Text>
+                <IconFA name="angle-right" color="#1259c3" size={17} />
+              </View>
+            </View>
+
           </View>
 
         </View>
@@ -137,7 +172,6 @@ const styles = StyleSheet.create({
 
   containerHome: {
     padding: 10,
-    height: 800
   },
 
   firstSection: {
@@ -188,7 +222,7 @@ const styles = StyleSheet.create({
   imageIOs2: {
     resizeMode: 'contain',
     width: '100%',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
 
   imageAndroid2: {
@@ -196,5 +230,73 @@ const styles = StyleSheet.create({
     width: '100%',
     justifyContent: 'center'
   },
+
+  seenProductOftenContainer: {
+    backgroundColor: '#fff',
+    borderRadius: 4,
+    shadowColor: 'rgba(0, 0, 0, 0.1)',
+    shadowOffset: {width: -2, height: 4},
+    shadowOpacity: 0.5,
+    shadowRadius: 4,
+    padding: 10
+  },
+
+  seenProductOften_text: {
+    color: '#000',
+    fontWeight: "700",
+    fontSize: 13,
+  },
+
+  seenProductOften_insideContainer: {
+    flexDirection: 'row',
+    width: '100%'
+  },
+
+  seenProductOften_image: {
+    resizeMode: 'contain',
+    width: '30%',
+    marginLeft: -10
+  },
+
+  seenProductOften_titleProduct: {
+    color: '#333',
+    paddingTop: 10,
+    fontSize: 12.5
+  },
+
+  seenProductOften_containerPrice: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+
+  seenProductOften_priceProduct: {
+    paddingVertical: 5,
+    fontSize: 16.5,
+    color: '#000',
+    fontWeight: "500"
+  },
+
+  seenProductOften_discount: {
+    fontSize: 11,
+    color: 'rgb(0, 166, 80)',
+    paddingLeft: 5
+  },
+
+  seenProductOften_freeDelivery: {
+    fontSize: 11,
+    color: 'rgb(0, 166, 80)',
+    fontWeight: "600"
+  },
+
+  seenProductOften_moreInfo: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+
+  seenProductOften_moreInfo_text: {
+    color: '#1259c3',
+    fontWeight: "600",
+    fontSize: 11
+  }
 
 });
