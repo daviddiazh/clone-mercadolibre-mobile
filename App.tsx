@@ -2,6 +2,7 @@ import 'react-native-gesture-handler';
 
 import React, { Fragment } from 'react';
 import {
+  Platform,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -20,26 +21,18 @@ import { FooterMenuMain } from './src/components/FooterMenu/FooterMenuMain';
 const App = () => {
 
   return (
-    <NavigationContainer>
-        {/* <StackNavigator /> */}
+    <NavigationContainer>        
 
       <SafeAreaView style={[ styles.mainApplication ]} />
-        <SafeAreaView style={{ flex:1, backgroundColor: '#fff'}}>
+        <SafeAreaView style={{ flex: 1, backgroundColor: '#fff'}}>
 
         <StackNavigator />
         
         <StatusBar backgroundColor="#ffec0a" />
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-        >
-          <View style={{ flex: 1, backgroundColor: 'white' }} >
-            {/* <HomeScreen /> */}
 
-            
-            {/* <FooterMenuMain /> */}
+          {/* <HomeScreen /> */}
 
-          </View>
-        </ScrollView> 
+        <FooterMenuMain />
       </SafeAreaView> 
 
     </NavigationContainer>
@@ -55,7 +48,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     // fontFamily: 'sans-serif'
     // height: '100%',
-  }
+  },
 });
 
 export default App;

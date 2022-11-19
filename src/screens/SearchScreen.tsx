@@ -13,10 +13,6 @@ export const SearchScreen = ({ navigation }: PropsNavigation) => {
         <View style={[ styles.container_search ]}>
           <View style={[ styles.input ]}>
             <Icon name="search-outline" color="#8f8f8d" style={{ paddingRight: 10 }} />
-            {/* <Button
-              title='Buscar en Mercado Libre'
-              onPress={ () => navigation.navigate('SearchScreen') }
-            /> */}
             <TextInput placeholder='Buscar en Mercado Libre' placeholderTextColor={"grey"} />
           </View>
         </View>
@@ -31,32 +27,6 @@ export const SearchScreen = ({ navigation }: PropsNavigation) => {
     </View>
   )
 }
-
-// export const HeaderIOs = ({navigation}: any) => {
-//   return (
-//     <View style={[ styles.main ]}>
-//       <View style={[ styles.header ]}>
-
-//         <View style={[ styles.container_search ]}>
-//           <View style={[ styles.input ]}>
-//             <Icon name="search-outline" color="#8f8f8d" style={{ paddingRight: 10 }} />
-//             <Button
-//               title='Buscar en Mercado Libre'
-//               onPress={ () => navigation.navigate('SearchScreen') }
-//             />
-//             {/* <TextInput placeholder='Buscar en Mercado Libre'/> */}
-//           </View>
-//         </View>
-
-//         <Text
-//           onPress={ () => navigation.navigate('HomeScreen') }
-//         >Cancelar</Text>
-
-//       </View>
-
-//     </View>
-//   )
-// }
 
 const styles = StyleSheet.create({
   main: {
