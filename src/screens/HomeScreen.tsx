@@ -17,11 +17,13 @@ export const HomeScreen = ({ navigation }: PropsNavigation) => {
       <HeaderMain navigation={navigation} />
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
+        showsVerticalScrollIndicator={false}
+        showsHorizontalScrollIndicator={false}
       >
         <View style={[ styles.main ]}>
 
           <LinearGradient
-            colors={[ '#ffec0a', '#ebebeb' ]}
+            colors={[ '#faea07', '#ebebeb' ]}
             style={{ height: 180 }}
           />
           <Image
@@ -44,7 +46,12 @@ export const HomeScreen = ({ navigation }: PropsNavigation) => {
                 styles.firstSection,
               ]}
             >
-              <Text style={[ styles.firstSection_blackText ]}>
+              <Text 
+                style={[ 
+                  styles.firstSection_blackText,
+                  Platform.OS === 'android' ? {'fontSize': 13.5} : null
+                ]}
+              >
                 <IconMCI name="truck-cargo-container" color="rgb(0, 166, 80)" /> <Text style={[ styles.firstSection_greenText ]}>Envío gratis</Text> en millones de productos desde 70.000
               </Text>
             </View>
@@ -60,35 +67,40 @@ export const HomeScreen = ({ navigation }: PropsNavigation) => {
                     style={{ fontSize: 20, textAlign: 'center', }}
                   />
                 </View>
-                <Text style={[ styles.text, styles.blueText ]}>Ofertas</Text>
+                <Text 
+                  style={[ 
+                    styles.text, styles.blueText,
+                    Platform.OS === 'android' ? {'fontSize': 10} : null
+                  ]}
+                >Ofertas</Text>
               </View>
 
               <View>
                 <View style={[ styles.container_icon]}>
                   <IconMCI name="shopping-outline" style={[ styles.icon]}  />
                 </View>
-                <Text style={[ styles.text ]}>Súper</Text>
+                <Text style={[ styles.text, Platform.OS === 'android' ? {'fontSize': 10} : null ]}>Súper</Text>
               </View>
 
               <View>
                 <View style={[ styles.container_icon]}>
                   <IconIO name="md-car-sport-outline" style={[ styles.icon]}  />
                 </View>
-                <Text style={[ styles.text ]}>Vehículos</Text>
+                <Text style={[ styles.text, Platform.OS === 'android' ? {'fontSize': 10} : null ]}>Vehículos</Text>
               </View>
 
               <View>
                 <View style={[ styles.container_icon]}>
                   <IconIO name="shirt-outline" style={[ styles.icon]}  />
                 </View>
-                <Text style={[ styles.text ]}>Moda</Text>
+                <Text style={[ styles.text, Platform.OS === 'android' ? {'fontSize': 10} : null ]}>Moda</Text>
               </View>
 
               <View>
                 <View style={[ styles.container_icon]}>
                   <IconIO name="add" style={[ styles.icon]}  />
                 </View>
-                <Text style={[ styles.text ]}>Ver más</Text>
+                <Text style={[ styles.text, Platform.OS === 'android' ? {'fontSize': 10} : null ]}>Ver más</Text>
               </View>
 
             </View>
@@ -107,7 +119,7 @@ export const HomeScreen = ({ navigation }: PropsNavigation) => {
                 Platform.OS === 'ios' ? {'marginTop': -75} : {'marginTop': -60},
               ]}
             >
-              <Text style={[ styles.seenProductOften_text ]}>Visto recientemente</Text>
+              <Text style={[ styles.seenProductOften_text, Platform.OS === 'android' ? {'fontSize': 17} : null ]}>Visto recientemente</Text>
               <View style={[ styles.seenProductOften_insideContainer ]}>
                 <Image
                   source={require('../images/iphone.webp')}
@@ -117,12 +129,19 @@ export const HomeScreen = ({ navigation }: PropsNavigation) => {
                   ]}
                 />
                 <View>
-                  <Text style={[ styles.seenProductOften_titleProduct ]}>Celular iPhone 13 Pro Max 128gb</Text>
+                  <Text 
+                    style={[ 
+                      styles.seenProductOften_titleProduct,
+                      Platform.OS === 'android' ? {'fontSize': 15} : null
+                    ]}
+                  >
+                    Celular iPhone 13 Pro Max 128gb
+                  </Text>
                   <View style={[ styles.seenProductOften_containerPrice ]}>
-                    <Text style={[ styles.seenProductOften_priceProduct ]}>$ 6.299.000</Text>
-                    <Text style={[ styles.seenProductOften_discount ]}>13% OFF</Text>
+                    <Text style={[ styles.seenProductOften_priceProduct, Platform.OS === 'android' ? {'fontSize': 19} : null ]}>$ 6.299.000</Text>
+                    <Text style={[ styles.seenProductOften_discount, Platform.OS === 'android' ? {'fontSize': 13} : null ]}>13% OFF</Text>
                   </View>
-                  <Text style={[ styles.seenProductOften_freeDelivery ]}>Envío gratis</Text>
+                  <Text style={[ styles.seenProductOften_freeDelivery, Platform.OS === 'android' ? {'fontSize': 14} : null ]}>Envío gratis</Text>
                 </View>
               </View>
               <View 
@@ -131,7 +150,7 @@ export const HomeScreen = ({ navigation }: PropsNavigation) => {
                   styles.seenProductOften_moreInfo,
                 ]}
               >
-                <Text style={[ styles.seenProductOften_moreInfo_text ]}>Ver historial de navegación</Text>
+                <Text style={[ styles.seenProductOften_moreInfo_text, Platform.OS === 'android' ? {'fontSize': 14} : null ]}>Ver historial de navegación</Text>
                 <IconFA name="angle-right" color="#1259c3" size={17} />
               </View>
             </View>
@@ -142,7 +161,7 @@ export const HomeScreen = ({ navigation }: PropsNavigation) => {
                 styles.offerContainer,
               ]}
             >
-              <Text style={[ styles.seenProductOften_text ]}>Oferta del día</Text>
+              <Text style={[ styles.seenProductOften_text, Platform.OS === 'android' ? {'fontSize': 17} : null ]}>Oferta del día</Text>
               <Image
                 source={require('../images/tv.webp')}
                 style={[
@@ -150,12 +169,12 @@ export const HomeScreen = ({ navigation }: PropsNavigation) => {
                 ]}
               />
               <View>
-                <Text style={[ styles.seenProductOften_titleProduct ]}>Smart TV 32 HD - Accede a Netflix, YouTube, Prime video o navega en internet con un Tv Smart Marca EVL.</Text>
+                <Text style={[ styles.seenProductOften_titleProduct, Platform.OS === 'android' ? {'fontSize': 15} : null ]}>Smart TV 32 HD - Accede a Netflix, YouTube, Prime video o navega en internet con un Tv Smart Marca EVL.</Text>
                 <View style={[ styles.offer_priceContainer ]}>
-                  <Text style={[ styles.seenProductOften_priceProduct ]}>$ 900.299</Text>
-                  <Text style={[ styles.seenProductOften_discount ]}>35% OFF</Text>
+                  <Text style={[ styles.seenProductOften_priceProduct, Platform.OS === 'android' ? {'fontSize': 18} : null ]}>$ 900.299</Text>
+                  <Text style={[ styles.seenProductOften_discount, Platform.OS === 'android' ? {'fontSize': 13} : null ]}>35% OFF</Text>
                 </View>
-                <Text style={[ styles.seenProductOften_freeDelivery ]}>Envío gratis</Text>
+                <Text style={[ styles.seenProductOften_freeDelivery, Platform.OS === 'android' ? {'fontSize': 13} : null ]}>Envío gratis</Text>
               </View>
               <View 
                 style={[
@@ -163,7 +182,7 @@ export const HomeScreen = ({ navigation }: PropsNavigation) => {
                   styles.seenProductOften_moreInfo,
                 ]}
               >
-                <Text style={[ styles.seenProductOften_moreInfo_text ]}>Ver historial de navegación</Text>
+                <Text style={[ styles.seenProductOften_moreInfo_text, Platform.OS === 'android' ? {'fontSize': 14} : null ]}>Ver historial de navegación</Text>
                 <IconFA name="angle-right" color="#1259c3" size={17} />
               </View>
             </View>
@@ -182,7 +201,7 @@ export const HomeScreen = ({ navigation }: PropsNavigation) => {
                 Platform.OS === 'ios' ? {'marginTop': -385} : {'marginTop': -340},
               ]}
             >
-              <Text style={[ styles.seenProductOften_text ]}>Categorias</Text>
+              <Text style={[ styles.seenProductOften_text, Platform.OS === 'android' ? {'fontSize': 18} : null ]}>Categorias</Text>
 
               <View style={[ styles.categoryContainer ]}>
                 <IconFA 
@@ -194,32 +213,32 @@ export const HomeScreen = ({ navigation }: PropsNavigation) => {
                     paddingRight: 24
                   }} 
                 />
-                <Text style={[ styles.categoryText ]}>Celulares y Teléfonos</Text>
+                <Text style={[ styles.categoryText, Platform.OS === 'android' ? {'fontSize': 14} : null ]}>Celulares y Teléfonos</Text>
               </View>
 
               <View style={[ styles.categoryContainer ]}>
                 <IconMI name="laptop-mac" style={[ styles.categoryIcon ]} />
-                <Text style={[ styles.categoryText ]}>Computación</Text>
+                <Text style={[ styles.categoryText, Platform.OS === 'android' ? {'fontSize': 14} : null ]}>Computación</Text>
               </View>
 
               <View style={[ styles.categoryContainer ]}>
                 <IconMCI name="lipstick" style={[ styles.categoryIcon ]} />
-                <Text style={[ styles.categoryText ]}>Belleza y Cuidado Personal</Text>
+                <Text style={[ styles.categoryText, Platform.OS === 'android' ? {'fontSize': 14} : null ]}>Belleza y Cuidado Personal</Text>
               </View>
 
               <View style={[ styles.categoryContainer ]}>
                 <IconF name="mic" style={[ styles.categoryIcon ]} />
-                <Text style={[ styles.categoryText ]}>Electrónica, Audio y Video</Text>
+                <Text style={[ styles.categoryText, Platform.OS === 'android' ? {'fontSize': 14} : null ]}>Electrónica, Audio y Video</Text>
               </View>
 
               <View style={[ styles.categoryContainer ]}>
                 <IconIO name="md-football-outline" style={[ styles.categoryIcon ]} />
-                <Text style={[ styles.categoryText ]}>Deportes y Fitness</Text>
+                <Text style={[ styles.categoryText, Platform.OS === 'android' ? {'fontSize': 14} : null ]}>Deportes y Fitness</Text>
               </View>
 
               <View style={[ styles.categoryContainer ]}>
                 <IconIO name="car-outline" style={[ styles.categoryIcon ]} />
-                <Text style={[ styles.categoryText ]}>Carros, Motos y Otros</Text>
+                <Text style={[ styles.categoryText, Platform.OS === 'android' ? {'fontSize': 14} : null ]}>Carros, Motos y Otros</Text>
               </View>
 
               <View 
@@ -228,7 +247,7 @@ export const HomeScreen = ({ navigation }: PropsNavigation) => {
                   styles.seenProductOften_moreInfo,
                 ]}
               >
-                <Text style={[ styles.seenProductOften_moreInfo_text ]}>Ver todas las categorías</Text>
+                <Text style={[ styles.seenProductOften_moreInfo_text, Platform.OS === 'android' ? {'fontSize': 14} : null ]}>Ver todas las categorías</Text>
                 <IconFA name="angle-right" color="#1259c3" size={17} />
               </View>
 
@@ -294,7 +313,8 @@ const styles = StyleSheet.create({
 
   firstSection_blackText: {
     textAlign: 'center',
-    fontSize: 12
+    fontSize: 12,
+    color: '#333'
   },
 
   container_icon: {
@@ -317,7 +337,8 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 8,
     paddingTop: 5,
-    textAlign: 'center'
+    textAlign: 'center',
+    color: '#333'
   },
 
   imageIOs2: {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, StyleSheet, Text, TextInput, Touchable, TouchableWithoutFeedback, View } from 'react-native';
+import { StyleSheet, Text, TouchableWithoutFeedback, View } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 export const HeaderAndroid = ({navigation}: any) => {
@@ -39,8 +39,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10, // Top - Bottom
     paddingHorizontal: 15, // Left - Right
     margin: 0,
-    backgroundColor: '#ffec0a',
-    // fontFamily: 'sans-serif'
+    backgroundColor: '#faea07',
     height: 95,
   },
 
@@ -66,8 +65,6 @@ const styles = StyleSheet.create({
     fontSize: 12.5,
     paddingVertical: 5,
     paddingHorizontal: 10,
-    // borderTopRightRadius: 100,
-    // borderBottomRightRadius: 100,
     borderRadius: 100,
     shadowColor: '#171717',
     shadowOffset: {width: -2, height: 4},
@@ -76,7 +73,7 @@ const styles = StyleSheet.create({
   },
 
   text_send: {
-    fontSize: 13,
+    fontSize: 14.5,
     color: '#333'
   }
 });

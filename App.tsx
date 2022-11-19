@@ -3,13 +3,11 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import {
   SafeAreaView,
-  ScrollView,
   StatusBar,
   StyleSheet,
 } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native'
 import { StackNavigator } from './src/navigator/StackNavigator';
-import { FooterMenuMain } from './src/components/FooterMenu/FooterMenuMain';
 
 const App = () => {
 
@@ -21,7 +19,7 @@ const App = () => {
 
         <StackNavigator />
         
-        <StatusBar backgroundColor="#ffec0a" />
+        <StatusBar backgroundColor="#faea07" />
 
           {/* <HomeScreen /> */}
 
@@ -38,7 +36,7 @@ const styles = StyleSheet.create({
     padding: 0,
     margin: 0,
     flex: 0,
-    backgroundColor: '#ffec0a', //ios
+    backgroundColor: '#faea07', //ios
     bottom: 0,
     // fontFamily: 'sans-serif'
     // height: '100%',

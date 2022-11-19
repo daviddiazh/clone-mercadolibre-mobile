@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     margin: 0,
     backgroundColor: '#ffec0a',
     // fontFamily: 'sans-serif'
-    height: 65,
+    height: 50,
   },
 
   header: {
