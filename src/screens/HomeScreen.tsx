@@ -1,9 +1,11 @@
 import React, { Fragment } from 'react';
 import { StyleSheet, View, Text, Image, Platform, ScrollView, Button } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import { HeaderMain } from '../components/HeaderMain';
-import { PropsNavigation } from '../interfaces/IPropsNavigator';
 import IconMCI from 'react-native-vector-icons/MaterialCommunityIcons';
+import { PropsNavigation } from '../interfaces/IPropsNavigator';
+import { HeaderMain } from '../components/HeaderMain';
+import IconFA from 'react-native-vector-icons/FontAwesome';
+import IconIO from 'react-native-vector-icons/Ionicons';
 
 export const HomeScreen = ({ navigation }: PropsNavigation) => {
 
@@ -22,7 +24,7 @@ export const HomeScreen = ({ navigation }: PropsNavigation) => {
         <Image
           source={require('../images/mainBanner.jpeg')}
           style={[ 
-            Platform.OS === 'ios' ? {'marginTop': -350} : {'marginTop': -330},
+            Platform.OS === 'ios' ? {'marginTop': -360} : {'marginTop': -340},
             Platform.OS === 'ios' ? styles.imageIOs : styles.imageAndroid
           ]}
         />
@@ -30,7 +32,7 @@ export const HomeScreen = ({ navigation }: PropsNavigation) => {
         <View 
           style={[
             styles.containerHome,
-            Platform.OS === 'ios' ? {'marginTop': -180} : {'marginTop': -155}
+            Platform.OS === 'ios' ? {'marginTop': -185} : {'marginTop': -160}
           ]}
         >
 
@@ -44,11 +46,57 @@ export const HomeScreen = ({ navigation }: PropsNavigation) => {
             </Text>
           </View>
 
-          <View>
-            <Text></Text>
+
+          <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
+
+            <View>
+              <View style={[ styles.container_icon]}>
+                <IconFA 
+                  name="tag" 
+                  color="#1259c3" 
+                  style={{ fontSize: 20, textAlign: 'center', }}
+                />
+              </View>
+              <Text style={[ styles.text, styles.blueText ]}>Ofertas</Text>
+            </View>
+
+            <View>
+              <View style={[ styles.container_icon]}>
+                <IconMCI name="shopping-outline" style={[ styles.icon]}  />
+              </View>
+              <Text style={[ styles.text ]}>Súper</Text>
+            </View>
+
+            <View>
+              <View style={[ styles.container_icon]}>
+                <IconIO name="md-car-sport-outline" style={[ styles.icon]}  />
+              </View>
+              <Text style={[ styles.text ]}>Vehículos</Text>
+            </View>
+
+            <View>
+              <View style={[ styles.container_icon]}>
+                <IconIO name="shirt-outline" style={[ styles.icon]}  />
+              </View>
+              <Text style={[ styles.text ]}>Moda</Text>
+            </View>
+
+            <View>
+              <View style={[ styles.container_icon]}>
+                <IconIO name="add" style={[ styles.icon]}  />
+              </View>
+              <Text style={[ styles.text ]}>Ver más</Text>
+            </View>
+
           </View>
 
-
+          <Image
+            source={require('../images/banner2.jpeg')}
+            style={[ 
+              Platform.OS === 'ios' ? {'marginTop': -80} : {'marginTop': -70},
+              Platform.OS === 'ios' ? styles.imageIOs2 : styles.imageAndroid2
+            ]}
+          />
 
         </View>
 
@@ -110,6 +158,41 @@ const styles = StyleSheet.create({
   firstSection_blackText: {
     textAlign: 'center',
     fontSize: 12
+  },
+
+  container_icon: {
+    backgroundColor: '#fff',
+    borderRadius: 100,
+    paddingVertical: 10, 
+    paddingHorizontal: 10, 
+  },
+
+  icon: {
+    fontSize: 20,
+    textAlign: 'center',
+    color: '#807e7e'
+  },
+
+  blueText: {
+    color: '#1259c3'
+  },
+
+  text: {
+    fontSize: 8,
+    paddingTop: 5,
+    textAlign: 'center'
+  },
+
+  imageIOs2: {
+    resizeMode: 'contain',
+    width: '100%',
+    justifyContent: 'center'
+  },
+
+  imageAndroid2: {
+    resizeMode: 'contain',
+    width: '100%',
+    justifyContent: 'center'
   },
 
 });

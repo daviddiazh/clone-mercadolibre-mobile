@@ -9,41 +9,31 @@ export const FooterMenuIOs = () => {
   return (
     <View style={[ styles.main ]}>
 
-      <View
-        style={[ styles.iconAndText ]}
-      >
+      <View>
         <IconSLI 
           name="home" 
           color="#1259c3"
-          style={[ styles.icon ]}
+          style={{ fontSize: 20, textAlign: 'center', paddingBottom: 5 }}
         />
         <Text style={[ styles.text, styles.blueText ]}>Inicio</Text>
       </View>
 
-      <View
-        style={[ styles.iconAndText ]}
-      >
+      <View>
         <IconAD name="hearto" style={[ styles.icon ]} />
         <Text style={[ styles.text ]}>Favoritos</Text>
       </View>
 
-      <View
-        style={[ styles.iconAndText ]}
-      >
+      <View>
         <IconSLI name="handbag" style={[ styles.icon ]} />
         <Text style={[ styles.text ]}>Mis Compras</Text>
       </View>
 
-      <View
-        style={[ styles.iconAndText ]}
-      >
+      <View>
         <IconIO name="notifications-outline" style={[ styles.icon ]} />
         <Text style={[ styles.text ]}>Notificaciones</Text>
       </View>
 
-      <View
-        style={[ styles.iconAndText ]}
-      >
+      <View>
         <IconF name="menu" style={[ styles.icon ]} />
         <Text style={[ styles.text ]}>Más</Text>
       </View>
@@ -59,21 +49,24 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     padding: 10,
     flexDirection: 'row',
-    width: '100%'
+    width: '100%',
+    justifyContent: 'space-around'
   },
 
-  iconAndText: {
-    paddingHorizontal: 14
-  },
+  // iconAndText: {
+  //   paddingHorizontal: 14
+  // },
 
   icon: {
     fontSize: 20,
     paddingBottom: 5,
-    textAlign: 'center'
+    textAlign: 'center',
+    color: '#807e7e'
   },
 
   text: {
-    fontSize: 10
+    fontSize: 9,
+    textAlign: 'center'
   },
 
   blueText: {

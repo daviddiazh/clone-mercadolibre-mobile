@@ -60,7 +60,9 @@ const styles = StyleSheet.create({
   },
 
   text: {
-    fontSize: 10
+    fontSize: 10,
+    textAlign: 'center',
+    fontWeight: "600"
   },
 
   blueText: {
