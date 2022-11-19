@@ -1,32 +1,70 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useEffect } from 'react';
 import { StyleSheet, Text, TextInput, View } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons';
+import { IProduct } from '../interfaces/IProduct';
 import { PropsNavigation } from '../interfaces/IPropsNavigator';
 
 export const SearchScreen = ({ navigation }: PropsNavigation) => {
+
+  const [ userInput, setUserInput ] = useState('');
+  const [ products, setProducts ] = useState<IProduct>({});
+  
+  const fetchSearch = async () => {
+    const url = `https://api.mercadolibre.com/sites/MLC/search?q=${userInput}&limit=14`;
+
+    const resp = await fetch( url );
+    const data = await resp.json();
+
+    return setProducts(data);
+  }
+
+  useEffect(() => {
+    fetchSearch();
+  }, [userInput]);
+  
+  console.log('products: ', products)
   return (
     <View>
       <View style={[ styles.main ]}>
-      <View style={[ styles.header ]}>
+        <View style={[ styles.header ]}>
 
-        <View style={[ styles.container_search ]}>
-          <View style={[ styles.input ]}>
-            <Icon name="search-outline" color="#8f8f8d" style={{ paddingRight: 10 }} />
-            <TextInput 
-              placeholder='Buscar en Mercado Libre' 
-              placeholderTextColor={"grey"} 
-              autoFocus={true}
-            />
+          <View style={[ styles.container_search ]}>
+            <View style={[ styles.input ]}>
+              <Icon name="search-outline" color="#8f8f8d" style={{ paddingRight: 10 }} />
+              <TextInput 
+                placeholder='Buscar en Mercado Libre' 
+                placeholderTextColor={"grey"} 
+                autoFocus={true}
+                onChangeText={ newText => setUserInput(newText) }
+                value={ userInput }
+              />
+            </View>
           </View>
-        </View>
 
-        <Text
-          onPress={ () => navigation.navigate('HomeScreen') }
-        >Cancelar</Text>
+          <Text
+            onPress={ () => navigation.navigate('HomeScreen') }
+          >Cancelar</Text>
+
+        </View>
 
       </View>
 
-    </View>
+
+      <View style={[ styles.autocomplete ]}>
+        {
+          products && products?.results?.filter(producto => producto.title?.toLowerCase().includes(userInput.toLowerCase())).map( producto => (
+            <View 
+              key={ producto?.id } 
+              style={[ styles.autocompleteElement ]}
+            >              
+              <Icon name="search-outline" color="#8f8f8d" style={[ styles.leftIconAutocomplete ]} />
+              <Text style={[ styles.textAutocomplete ]}>{producto?.title?.substring(0, 50) + '...'}</Text> 
+            </View>
+          ))
+        }
+      </View>
+
     </View>
   )
 }
@@ -75,5 +113,27 @@ const styles = StyleSheet.create({
   text_send: {
     fontSize: 13,
     color: '#333'
+  },
+
+  autocomplete: {
+  
+  },
+
+  autocompleteElement: {
+    paddingVertical: 13,
+    display: 'flex',
+    fontWeight: "500",
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+
+  leftIconAutocomplete: {
+    paddingHorizontal: 10,
+    fontSize: 17
+  },
+
+  textAutocomplete: {
+    paddingLeft: 0,
+    fontWeight: "600",
   }
 });
