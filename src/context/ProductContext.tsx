@@ -7,7 +7,7 @@ interface ContextProps {
     product: IProductId,
 
     getProducts: (searchTerm: string) => Object;
-    // getProduct: (idProduct: string) => Object;
+    getProduct: (idProduct: string) => Object;
 }
 
 export const ProductContext = createContext({} as ContextProps);

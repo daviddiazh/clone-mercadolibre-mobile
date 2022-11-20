@@ -1,4 +1,4 @@
-import { FC, useReducer, useEffect } from 'react';
+import { FC, useReducer, useEffect, useState } from 'react';
 import { IProduct } from '../interfaces/IProduct';
 import { ProductContext } from './ProductContext';
 import { productReducer } from './productReducer';
@@ -20,49 +20,48 @@ interface Props {
     children: JSX.Element | JSX.Element[]
 }
 
-// export const ProductProvider: FC<any> = ({ children }) => {
 export const ProductProvider = ({ children }: Props) => {
 
     const [ state, dispatch ] = useReducer(productReducer, PRODUCT_INITIAL_STATE);
+    const [ isLoading, setLoading ] = useState(false);
 
     const getProducts = async (searchTerm: string) => { 
-        // const { data, isLoading } = useFetch<IProduct>(`https://api.mercadolibre.com/sites/MLC/search?q=${ searchTerm }&limit=25`);
+        
+        setLoading(true);
         const resp = await fetch(`https://api.mercadolibre.com/sites/MLC/search?q=${ searchTerm }&limit=25`);
-
         const data = await resp.json()
 
-        // console.log('data - getProducts PROVIDER', data);
-
         dispatch({ type: 'Product - getProducts', payload: data })
+        setLoading(false);
 
-        // if( isLoading ) return <Loading />
+        if( isLoading ) return <Loading />;
 
         return data;
     }
 
-    // const getProduct = async (productId: string) => {
-    //     const { data, isLoading } = useFetch<IProductId>(`https://api.mercadolibre.com/items/${ productId }`);
+    const getProduct = async (productId: string) => {
+        // const { data: description, isLoading: isLoadingDescription } = useFetch(`https://api.mercadolibre.com/items/${ productId }/description`)
+        setLoading(true);
+        const resp = await fetch(`https://api.mercadolibre.com/items/${ productId }`);
 
-    //     const { data: description, isLoading: isLoadingDescription } = useFetch(`https://api.mercadolibre.com/items/${ productId }/description`)
+        const data = await resp.json()
 
-    //     console.log('data - getProduct PROVIDER', data);
+        console.log('data - getProduct PROVIDER', data);
 
-    //     dispatch({ type: 'Product - getProduct', payload: data }); //TODO: Check it
+        dispatch({ type: 'Product - getProduct', payload: data }); //TODO: Check it
+        setLoading(false);
 
-    //     if( isLoading || isLoadingDescription ) return <Loading />
+        if( isLoading ) return <Loading />;
 
-    //     return {
-    //         data,
-    //         description
-    //     }
-    // }
+        return data
+    }
 
     return (
         <ProductContext.Provider value={{
             ...state,
 
             getProducts,
-            // getProduct,
+            getProduct,
         }}>
             { children }
         </ProductContext.Provider>
