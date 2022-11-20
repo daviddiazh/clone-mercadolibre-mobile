@@ -52,12 +52,10 @@ const styles = StyleSheet.create({
     padding: 10,
     flexDirection: 'row',
     width: '100%',
-    justifyContent: 'space-around'
+    justifyContent: 'space-around',
+    borderTopWidth: 1,
+    borderTopColor: '#ebebeb'
   },
-
-  // iconAndText: {
-  //   paddingHorizontal: 14
-  // },
 
   icon: {
     fontSize: 20,

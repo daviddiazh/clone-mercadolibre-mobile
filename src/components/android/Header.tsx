@@ -1,11 +1,27 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableWithoutFeedback, View } from 'react-native';
+
+import { useRoute } from '@react-navigation/native';
+
 import Icon from 'react-native-vector-icons/Ionicons';
+import IconAD from 'react-native-vector-icons/AntDesign';
 
 export const HeaderAndroid = ({navigation}: any) => {
+
+  const route = useRoute();
+
   return (
     <View style={[ styles.main ]}>
       <View style={[ styles.header ]}>
+        {
+          route.name == 'ProductListScreen' 
+            ? <IconAD 
+                name="arrowleft" 
+                style={{ paddingTop: 7.5, fontSize: 20, color: '#000' }}
+                onPress={ () => navigation.goBack() }
+              /> 
+            : null
+        }
         <View style={[ styles.container_search ]}>
           <TouchableWithoutFeedback
             onPress={ () => navigation.navigate('SearchScreen') }
@@ -50,7 +66,7 @@ const styles = StyleSheet.create({
   },
 
   container_search: {
-    width: '92%',
+    width: '85%',
     display: 'flex',
   },
 

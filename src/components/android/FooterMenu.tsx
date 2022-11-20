@@ -52,7 +52,9 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     flexDirection: 'row',
     width: '100%',
-    justifyContent: 'space-around'
+    justifyContent: 'space-around',
+    borderTopWidth: 1,
+    borderTopColor: '#ebebeb'
   },
 
   icon: {
