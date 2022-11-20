@@ -109,7 +109,7 @@ export const ProductListScreen = ({ navigation }: PropsNavigation) => {
 const styles = StyleSheet.create({
 
     main: {
-        marginBottom: 70,
+        marginBottom: 60,
         padding: 0,
         margin: 0
     },
@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
     cardProduct: {
         flexDirection: 'row',
         width: '100%',
-        height: 150,
+        // height: 150,
         paddingHorizontal: 30,
         borderBottomColor: '#ebebeb',
         borderBottomWidth: 1,
@@ -167,13 +167,15 @@ const styles = StyleSheet.create({
         width: '40%',
         height: 130,
         marginLeft: -20,
+        marginRight: 10,
         resizeMode: 'contain',
         textAlign: 'center',  
-        marginRight: 10
     },
 
     containerDataProduct: {
-        width: '70%',
+        width: '67%',
+        marginTop: 0,
+        marginBottom: 10,
     },
 
     titleProduct: {

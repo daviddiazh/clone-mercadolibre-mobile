@@ -12,7 +12,11 @@ export const ProductDetailsScreen = ({ navigation }: PropsNavigation) => {
     return (
         <Fragment>
             <HeaderMain navigation={ navigation } />
-            <ScrollView>
+            <ScrollView
+                contentInsetAdjustmentBehavior="automatic"
+                showsVerticalScrollIndicator={false}
+                showsHorizontalScrollIndicator={false}
+            >
 
                 <View>
                     <Text>ProductDetails</Text>

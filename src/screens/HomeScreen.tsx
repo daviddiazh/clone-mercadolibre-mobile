@@ -275,7 +275,7 @@ const styles = StyleSheet.create({
 
   imageIOs: {
     resizeMode: 'contain',
-    width: '95%', 
+    width: '94.5%', 
     marginVertical: 5, // Top - Bottom
     marginHorizontal: 10, // Left - Right
     justifyContent: 'center'
@@ -283,7 +283,7 @@ const styles = StyleSheet.create({
 
   imageAndroid: {
     resizeMode: 'contain',
-    width: '95%', 
+    width: '94.8%', 
     marginVertical: 0, // Top - Bottom
     marginHorizontal: 12, // Left - Right
     justifyContent: 'center'
