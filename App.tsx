@@ -8,11 +8,13 @@ import {
 } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native'
 import { StackNavigator } from './src/navigator/StackNavigator';
+import { ProductProvider } from './src/context/ProductProvider';
 
 const App = () => {
 
   return (
-    <NavigationContainer>        
+    <ProductProvider>
+      <NavigationContainer>        
 
       <SafeAreaView style={[ styles.mainApplication ]} />
         <SafeAreaView style={{ flex: 1, backgroundColor: '#fff'}}>
@@ -26,7 +28,8 @@ const App = () => {
         {/* <FooterMenuMain /> */}
       </SafeAreaView> 
 
-    </NavigationContainer>
+      </NavigationContainer>
+    </ProductProvider>
 
   );
 };

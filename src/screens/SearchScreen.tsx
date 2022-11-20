@@ -1,29 +1,28 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useEffect } from 'react';
-import { StyleSheet, Text, TextInput, View } from 'react-native'
+import { StyleSheet, Text, TextInput, View, TouchableOpacity, AsyncStorage } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { IProduct } from '../interfaces/IProduct';
 import { PropsNavigation } from '../interfaces/IPropsNavigator';
+import { ProductContext } from '../context/ProductContext';
 
 export const SearchScreen = ({ navigation }: PropsNavigation) => {
 
   const [ userInput, setUserInput ] = useState('');
-  const [ products, setProducts ] = useState<IProduct>({});
-  
-  const fetchSearch = async () => {
-    const url = `https://api.mercadolibre.com/sites/MLC/search?q=${userInput}&limit=14`;
 
-    const resp = await fetch( url );
-    const data = await resp.json();
-
-    return setProducts(data);
-  }
+  const { getProducts, products } = useContext( ProductContext ); 
 
   useEffect(() => {
-    fetchSearch();
+    getProducts(userInput);
   }, [userInput]);
+
+
+  const searchProducts = () => {
+    getProducts(userInput);
+    navigation.navigate('ProductListScreen');
+  }
+
   
-  console.log('products: ', products)
   return (
     <View>
       <View style={[ styles.main ]}>
@@ -54,13 +53,15 @@ export const SearchScreen = ({ navigation }: PropsNavigation) => {
       <View style={[ styles.autocomplete ]}>
         {
           products && products?.results?.filter(producto => producto.title?.toLowerCase().includes(userInput.toLowerCase())).map( producto => (
-            <View 
+            <TouchableOpacity 
               key={ producto?.id } 
               style={[ styles.autocompleteElement ]}
+              // onPress={ () => navigation.navigate('ProductListScreen') }
+              onPress={ searchProducts }
             >              
               <Icon name="search-outline" color="#8f8f8d" style={[ styles.leftIconAutocomplete ]} />
               <Text style={[ styles.textAutocomplete ]}>{producto?.title?.substring(0, 50) + '...'}</Text> 
-            </View>
+            </TouchableOpacity>
           ))
         }
       </View>
