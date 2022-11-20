@@ -72,7 +72,6 @@ const styles = StyleSheet.create({
 
   input: {
     width: '100%',
-    // flex: 8,
     display: 'flex',
     flexDirection: 'row',
     height: 35,

@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { StyleSheet, View, Text, Image, Platform, ScrollView, Button } from 'react-native';
+import { StyleSheet, View, Text, Image, Platform, ScrollView } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import IconMCI from 'react-native-vector-icons/MaterialCommunityIcons';
 import { PropsNavigation } from '../interfaces/IPropsNavigator';

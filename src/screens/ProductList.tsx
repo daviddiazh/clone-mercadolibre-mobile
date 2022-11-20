@@ -1,10 +1,11 @@
 import React, { Fragment, useContext } from 'react';
-import { ScrollView, StyleSheet, Text, View, TouchableWithoutFeedback, TouchableOpacity } from 'react-native';
+import { ScrollView, StyleSheet, Text, View, TouchableWithoutFeedback, TouchableOpacity, Image, ImageBackground, Platform } from 'react-native';
 import { FooterMenuMain } from '../components/FooterMenu/FooterMenuMain';
 import { HeaderMain } from '../components/HeaderMain';
 import { ProductContext } from '../context/ProductContext';
 import { PropsNavigation } from '../interfaces/IPropsNavigator';
 import IconAD from 'react-native-vector-icons/AntDesign';
+import IconE from 'react-native-vector-icons/Entypo';
 
 export const ProductListScreen = ({ navigation }: PropsNavigation) => {
 
@@ -18,7 +19,11 @@ export const ProductListScreen = ({ navigation }: PropsNavigation) => {
     return (
         <Fragment>
             <HeaderMain navigation={ navigation } />
-            <ScrollView>
+            <ScrollView
+                contentInsetAdjustmentBehavior="automatic"
+                showsVerticalScrollIndicator={false}
+                showsHorizontalScrollIndicator={false}
+            >
 
                 <View style={[ styles.main ]}>
 
@@ -36,17 +41,58 @@ export const ProductListScreen = ({ navigation }: PropsNavigation) => {
                         </View>
                     </View>
 
-                    {/* <TouchableOpacity onPress={() => navigation.goBack()}>
-                        <Text>Ir a atrás</Text>
-                    </TouchableOpacity> */}
-
                     <View>
                         {
-                            products.results?.map(product => (
+                            products.results?.map((product: any) => (
                                 <View key={ product.id }>
+
+                                    {/* <Text>{`${product.thumbnail.split('http://')[1]}`}</Text> */}
+
                                     <TouchableOpacity key={ product.id } onPress={ () => detailsProduct(product.id) }>
-                                        <Text>{product.id}</Text>
-                                        <Text>{product.title}</Text>
+                                        <View style={[ styles.cardProduct ]}>
+                                            <Image 
+                                                // source={{uri: product.thumbnail}}
+                                                source={{uri: `https://${product.thumbnail.split('http://')[1]}`}}
+                                                style={[ styles.imgProduct ]}
+                                            />
+
+                                            <View style={[ styles.containerDataProduct ]}>
+                                                <Text style={[
+                                                    styles.titleProduct,
+                                                    Platform.OS === 'android' ? styles.titleAndroidText : null,
+                                                ]}>
+                                                    {product.title.length >= 90 ? product.title.substring(90, '') + '...' : product.title}
+                                                </Text>
+                                                <Text 
+                                                    style={[
+                                                        styles.priceProduct,
+                                                        Platform.OS === 'android' ? styles.priceAndroidText : null,
+                                                    ]}
+                                                >
+                                                    $ {product.price}</Text>
+                                                <Text
+                                                    style={[
+                                                        styles.dividedPrice,
+                                                        Platform.OS === 'android' ? styles.dividedPriceAndroid : null,
+                                                    ]}
+                                                >
+                                                    en 36x $ {String(product?.price! / 36).split('.')[0]}</Text>
+                                                <Text
+                                                    style={[
+                                                        styles.freeDelivery,
+                                                        Platform.OS === 'android' ? styles.freeDeliveryAndroid : null,
+                                                    ]}
+                                                >
+                                                    Envío gratis</Text>
+                                                <View style={{ flexDirection: 'row' }}>
+                                                    <IconE name="star" style={[ styles.iconStars, Platform.OS === 'android' ? styles.iconStarsAndroid : null, ]} />
+                                                    <IconE name="star" style={[ styles.iconStars, Platform.OS === 'android' ? styles.iconStarsAndroid : null, ]} />
+                                                    <IconE name="star" style={[ styles.iconStars, Platform.OS === 'android' ? styles.iconStarsAndroid : null, ]} />
+                                                    <IconE name="star" style={[ styles.iconStars, Platform.OS === 'android' ? styles.iconStarsAndroid : null, ]} />
+                                                    <IconE name="star" style={[ styles.iconStars, Platform.OS === 'android' ? styles.iconStarsAndroid : null, ]} />
+                                                </View>
+                                            </View>
+                                        </View>
                                     </TouchableOpacity>
                                 </View>
                             ))
@@ -63,9 +109,6 @@ export const ProductListScreen = ({ navigation }: PropsNavigation) => {
 const styles = StyleSheet.create({
 
     main: {
-        // backgroundColor: '#ebebeb',
-        // height: '100%',
-        // flex: 1
         marginBottom: 70,
         padding: 0,
         margin: 0
@@ -109,6 +152,78 @@ const styles = StyleSheet.create({
 
     containerFilterTomorrow: {
         flexDirection: 'row'
+    },
+
+    cardProduct: {
+        flexDirection: 'row',
+        width: '100%',
+        height: 150,
+        paddingHorizontal: 30,
+        borderBottomColor: '#ebebeb',
+        borderBottomWidth: 1,
+    },
+
+    imgProduct: {
+        width: '40%',
+        height: 130,
+        marginLeft: -20,
+        resizeMode: 'contain',
+        textAlign: 'center',  
+        marginRight: 10
+    },
+
+    containerDataProduct: {
+        width: '70%',
+    },
+
+    titleProduct: {
+        color: '#333',
+        fontSize: 13,
+        paddingVertical: 10,
+    },
+
+    titleAndroidText: {
+        fontSize: 16,
+    },
+
+    priceProduct: {
+        fontSize: 18,
+        color: '#000',
+        fontWeight: "400"
+    },
+
+    priceAndroidText: {
+        fontSize: 22,
+    },
+
+    dividedPrice: {
+        fontSize: 10.5,
+        color: '#333',
+        fontWeight: "400"
+    },
+
+    dividedPriceAndroid: {
+        fontSize: 12,
+    },
+
+    freeDelivery: {
+        fontSize: 10.5,
+        color: 'rgb(0, 166, 80)',
+        fontWeight: "500",
+        paddingVertical: 5
+    },
+
+    freeDeliveryAndroid: {
+        fontSize: 12,
+    },
+
+    iconStars: {
+        color: '#307df0',
+        fontSize: 10.5,
+    },
+
+    iconStarsAndroid: {
+        fontSize: 12,
     }
 
 });
