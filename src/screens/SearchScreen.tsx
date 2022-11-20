@@ -17,8 +17,8 @@ export const SearchScreen = ({ navigation }: PropsNavigation) => {
   }, [userInput]);
 
 
-  const searchProducts = () => {
-    getProducts(userInput);
+  const searchProducts = (productTitle: any) => {
+    getProducts(productTitle);
     navigation.navigate('ProductListScreen');
   }
 
@@ -52,15 +52,14 @@ export const SearchScreen = ({ navigation }: PropsNavigation) => {
 
       <View style={[ styles.autocomplete ]}>
         {
-          products && products?.results?.filter(producto => producto.title?.toLowerCase().includes(userInput.toLowerCase())).map( producto => (
+          products && products?.results?.filter(product => product.title?.toLowerCase().includes(userInput.toLowerCase())).map( product => (
             <TouchableOpacity 
-              key={ producto?.id } 
+              key={ product?.id } 
               style={[ styles.autocompleteElement ]}
-              // onPress={ () => navigation.navigate('ProductListScreen') }
-              onPress={ searchProducts }
+              onPress={ () => searchProducts( product.title ) }
             >              
               <Icon name="search-outline" color="#8f8f8d" style={[ styles.leftIconAutocomplete ]} />
-              <Text style={[ styles.textAutocomplete ]}>{producto?.title?.substring(0, 50) + '...'}</Text> 
+              <Text style={[ styles.textAutocomplete ]}>{product?.title?.substring(0, 50) + '...'}</Text> 
             </TouchableOpacity>
           ))
         }

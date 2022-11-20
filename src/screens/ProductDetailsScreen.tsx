@@ -7,8 +7,7 @@ import { HeaderMain } from '../components/HeaderMain';
 
 export const ProductDetailsScreen = ({ navigation }: PropsNavigation) => {
 
-    const { product } = useContext( ProductContext )
-    console.log('-------product: -------', product)
+    const { product } = useContext( ProductContext ) 
 
     return (
         <Fragment>
@@ -20,7 +19,7 @@ export const ProductDetailsScreen = ({ navigation }: PropsNavigation) => {
                     <Text>{product.title}</Text>
                     <Text>{product.price}</Text>
                 </View>
-                
+
             </ScrollView>
             <FooterMenuMain navigation={ navigation } />
         </Fragment>

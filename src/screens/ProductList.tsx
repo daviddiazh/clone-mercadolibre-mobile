@@ -18,11 +18,10 @@ export const ProductListScreen = ({ navigation }: PropsNavigation) => {
         <Fragment>
             <HeaderMain navigation={ navigation } />
             <ScrollView>
-                {/* <Text>ProductList</Text> */}
 
                 {
                     products.results?.map(product => (
-                        <View>
+                        <View key={ product.id }>
                             <TouchableOpacity key={ product.id } onPress={ () => detailsProduct(product.id) }>
                                 <Text>{product.id}</Text>
                                 <Text>{product.title}</Text>

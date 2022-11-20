@@ -2,7 +2,6 @@ import { FC, useReducer, useEffect, useState } from 'react';
 import { IProduct } from '../interfaces/IProduct';
 import { ProductContext } from './ProductContext';
 import { productReducer } from './productReducer';
-import { useFetch } from '../hooks/useFetch';
 import { Loading } from '../components/Loading';
 import { IProductId } from '../interfaces/ProductId';
 
