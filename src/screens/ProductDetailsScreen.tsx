@@ -11,8 +11,6 @@ export const ProductDetailsScreen = ({ navigation }: PropsNavigation) => {
 
     const { product, descriptionProduct } = useContext( ProductContext );
 
-    console.log('descriptionProduct: ', descriptionProduct);
-
     return (
         <Fragment>
             <HeaderMain navigation={ navigation } />
