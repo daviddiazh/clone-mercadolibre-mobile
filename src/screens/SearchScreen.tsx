@@ -42,7 +42,8 @@ export const SearchScreen = ({ navigation }: PropsNavigation) => {
           </View>
 
           <Text
-            onPress={ () => navigation.navigate('HomeScreen') }
+            // onPress={ () => navigation.navigate('HomeScreen') }
+            onPress={ () => navigation.goBack() }
           >Cancelar</Text>
 
         </View>
@@ -59,7 +60,7 @@ export const SearchScreen = ({ navigation }: PropsNavigation) => {
               onPress={ () => searchProducts( product.title ) }
             >              
               <Icon name="search-outline" color="#8f8f8d" style={[ styles.leftIconAutocomplete ]} />
-              <Text style={[ styles.textAutocomplete ]}>{product?.title?.substring(0, 50) + '...'}</Text> 
+              <Text style={[ styles.textAutocomplete ]}>{product?.title?.length! >= 42 ? product?.title?.substring(0, 42) + '...' : product.title}</Text> 
             </TouchableOpacity>
           ))
         }
@@ -116,7 +117,7 @@ const styles = StyleSheet.create({
   },
 
   autocomplete: {
-  
+    
   },
 
   autocompleteElement: {
