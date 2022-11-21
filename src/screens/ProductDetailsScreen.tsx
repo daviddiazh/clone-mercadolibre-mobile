@@ -76,10 +76,28 @@ export const ProductDetailsScreen = ({ navigation }: PropsNavigation) => {
                         </View>
                     </View>
 
-                    <Text>$ {product.price}</Text>
+                    <Text
+                        style={[
+                            styles.productPrice,
+                            Platform.OS === 'android' ? styles.productPriceAndroid : null,
+                        ]}
+                    >
+                        $ {product.price}
+                    </Text>
 
-                    <Text>Hasta 48 cuotas</Text>
-                    <Text>Más información</Text>
+                    <View
+                        style={[
+                            styles.duesContainer,
+                        ]}
+                    >
+                        <Text style={[ styles.duesText, Platform.OS === 'android' ? styles.duesTextAndroid : null, ]}>Hasta 48 cuotas</Text>
+                        <Text 
+                            style={[ 
+                                styles.moreInfoTextBlue,
+                                Platform.OS === 'android' ? styles.moreInfoTextBlueAndroid : null,
+                            ]}
+                        >Más información</Text>
+                    </View>
 
                     <Text>Llega gratis el jueves</Text>
                     <Text>Enviar a Medellin, Antioquia</Text>
@@ -90,18 +108,25 @@ export const ProductDetailsScreen = ({ navigation }: PropsNavigation) => {
 
                     <Text>Stock disponible</Text>
 
-                    <TouchableOpacity>
-                        <Text>Cantidad: 1</Text>
-                        <IconAD name="right" />
-                    </TouchableOpacity>
+                    <View style={[ styles.quantityContainer ]}>
+                        <Text 
+                            style={[ 
+                                styles.quantityText,
+                                Platform.OS === 'android' ? styles.buyNow_textAndroid : null,
+                            ]}
+                        >
+                                Cantidad: <Text style={{fontWeight: "700"}}>1</Text>
+                        </Text>
+                        <IconAD name="right" color="#307df0" />
+                    </View>
 
-                    <TouchableOpacity>
-                        <Text>Comprar ahora</Text>
-                    </TouchableOpacity>
+                    <View style={[ styles.buyNow ]}>
+                        <Text style={[ styles.buyNow_text, Platform.OS === 'android' ? styles.buyNow_textAndroid : null, ]}>Comprar ahora</Text>
+                    </View>
 
-                    <TouchableOpacity>
+                    <View>
                         <Text>Agregar al carrito</Text>
-                    </TouchableOpacity>
+                    </View>
 
                     <View>
                         <View>
@@ -162,7 +187,7 @@ const styles = StyleSheet.create({
 
     containerLengthImgs: {
         backgroundColor: '#ebebeb',
-        width: 50,
+        width: 50,  
         paddingVertical: 5,
         borderRadius: 100,
         marginTop: 25,
@@ -199,5 +224,81 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 15
     },
+
+    productPrice: {
+        color: '#000',
+        fontSize: 23,
+        fontWeight: "500",
+    },
+
+    productPriceAndroid: {
+        fontSize: 28,
+    },
+
+    duesContainer: {
+        marginLeft: 20,
+        marginVertical: 10,
+    },
+
+    duesText: {
+        fontSize: 13,
+        color: '#000',
+    },
+
+    duesTextAndroid: {
+        fontSize: 16,
+        paddingLeft: 3,
+    },
+
+    moreInfoTextBlue: {
+        color: '#307df0',
+        fontSize: 13,
+        paddingTop: 3
+    },
+
+    moreInfoTextBlueAndroid: {
+        fontSize: 16,
+        paddingLeft: 3,
+    },
+
+
+    quantityContainer: {
+        backgroundColor: '#f1f1f1',
+        color: '#000',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        paddingHorizontal: 10,
+        paddingVertical: 15,
+        borderRadius: 5,
+        marginVertical: 20,
+    },
+
+    quantityText: {
+        fontSize: 14,
+        color: '#000'
+    },
+
+    quantityTextAndroid: {
+        fontSize: 17,
+    },
+
+    buyNow: {
+        backgroundColor: '#1259c3',
+        paddingHorizontal: 10,
+        paddingVertical: 15,
+        borderRadius: 5,
+    },
+
+    buyNow_text: {
+        color: '#fff',
+        textAlign: 'center',
+        fontSize: 14,
+        fontWeight: "600"
+    },
+
+    buyNow_textAndroid: {
+        fontSize: 17,
+    }
 
 });
