@@ -1,5 +1,5 @@
 import React, { Fragment, useContext } from 'react';
-import { ScrollView, StyleSheet, Text, View, TouchableWithoutFeedback, TouchableOpacity, Image, ImageBackground, Platform } from 'react-native';
+import { ScrollView, StyleSheet, Text, View, TouchableWithoutFeedback, Image, Platform } from 'react-native';
 import { FooterMenuMain } from '../components/FooterMenu/FooterMenuMain';
 import { HeaderMain } from '../components/HeaderMain';
 import { ProductContext } from '../context/ProductContext';
@@ -48,7 +48,7 @@ export const ProductListScreen = ({ navigation }: PropsNavigation) => {
 
                                     {/* <Text>{`${product.thumbnail.split('http://')[1]}`}</Text> */}
 
-                                    <TouchableOpacity key={ product.id } onPress={ () => detailsProduct(product.id) }>
+                                    <TouchableWithoutFeedback key={ product.id } onPress={ () => detailsProduct(product.id) }>
                                         <View style={[ styles.cardProduct ]}>
                                             <Image 
                                                 // source={{uri: product.thumbnail}}
@@ -93,7 +93,7 @@ export const ProductListScreen = ({ navigation }: PropsNavigation) => {
                                                 </View>
                                             </View>
                                         </View>
-                                    </TouchableOpacity>
+                                    </TouchableWithoutFeedback>
                                 </View>
                             ))
                         }

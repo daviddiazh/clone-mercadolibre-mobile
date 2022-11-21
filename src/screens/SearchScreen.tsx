@@ -1,8 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { useEffect } from 'react';
-import { StyleSheet, Text, TextInput, View, TouchableOpacity, AsyncStorage } from 'react-native';
+import { StyleSheet, Text, TextInput, View, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { IProduct } from '../interfaces/IProduct';
 import { PropsNavigation } from '../interfaces/IPropsNavigator';
 import { ProductContext } from '../context/ProductContext';
 
@@ -42,7 +41,6 @@ export const SearchScreen = ({ navigation }: PropsNavigation) => {
           </View>
 
           <Text
-            // onPress={ () => navigation.navigate('HomeScreen') }
             onPress={ () => navigation.goBack() }
           >Cancelar</Text>
 
@@ -58,6 +56,7 @@ export const SearchScreen = ({ navigation }: PropsNavigation) => {
               key={ product?.id } 
               style={[ styles.autocompleteElement ]}
               onPress={ () => searchProducts( product.title ) }
+              activeOpacity={ 0.75 }
             >              
               <Icon name="search-outline" color="#8f8f8d" style={[ styles.leftIconAutocomplete ]} />
               <Text style={[ styles.textAutocomplete ]}>{product?.title?.length! >= 42 ? product?.title?.substring(0, 42) + '...' : product.title}</Text> 
