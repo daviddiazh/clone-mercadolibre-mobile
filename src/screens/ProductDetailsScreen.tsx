@@ -23,7 +23,8 @@ export const ProductDetailsScreen = ({ navigation }: PropsNavigation) => {
                 <View style={[ styles.main ]}>
                     <Text 
                         style={[
-                            
+                            styles.condition,
+                            Platform.OS === 'android' ? styles.conditionAndroid : null,
                         ]}
                     >
                         { product?.condition === 'new' ? 'Nuevo' : 'Reacondicionado' } | { product?.sold_quantity } vendidos
@@ -43,7 +44,17 @@ export const ProductDetailsScreen = ({ navigation }: PropsNavigation) => {
                         <IconE name="star" style={[ styles.iconStars, Platform.OS === 'android' ? styles.iconStarsAndroid : null, ]} />
                         <IconE name="star" style={[ styles.iconStars, Platform.OS === 'android' ? styles.iconStarsAndroid : null, ]} />
                     </View>
-                    <Text>1/{ product?.pictures?.length }</Text>
+
+                    <View style={[styles.containerLengthImgs]}>
+                    <Text 
+                        style={[
+                                styles.lengthImgs_text,
+                                Platform.OS === 'android' ? styles.lengthImgs_textAndroid : null,
+                            ]}
+                        >
+                            1 / { product?.pictures?.length }
+                        </Text>
+                    </View>
 
                     <Image
                         // source={{uri: `https://${product.thumbnail?.split('http://')[1]}`}}
@@ -51,7 +62,19 @@ export const ProductDetailsScreen = ({ navigation }: PropsNavigation) => {
                         style={[ styles.imgProduct ]}
                     />
 
-                    <IconAD name="sharealt" />
+                    <View 
+                        style={{ 
+                            flexDirection: 'row',
+                            justifyContent: 'flex-end' 
+                        }}
+                    >
+                        <View style={[ styles.containerIcon ]}>
+                            <IconAD 
+                                name="sharealt"
+                                style={[ styles.shareIcon ]}
+                            />
+                        </View>
+                    </View>
 
                     <Text>$ {product.price}</Text>
 
@@ -107,11 +130,21 @@ const styles = StyleSheet.create({
         padding: 15,
         margin: 0
     },
+
+    condition: {
+        fontSize: 10,
+        color: '#666',
+    },
+
+    conditionAndroid: {
+        fontSize: 12, 
+    },
     
     titleProduct: {
         color: '#000',
         fontSize: 14,
         paddingVertical: 10,
+        marginVertical: -4
     },
 
     titleAndroidText: {
@@ -127,12 +160,44 @@ const styles = StyleSheet.create({
         fontSize: 12,
     },
 
+    containerLengthImgs: {
+        backgroundColor: '#ebebeb',
+        width: 50,
+        paddingVertical: 5,
+        borderRadius: 100,
+        marginTop: 25,
+    },
+
+    lengthImgs_text: {
+        textAlign: 'center',
+        color: '#000',
+        fontWeight: "500",
+        fontSize: 10.5
+    },
+
+    lengthImgs_textAndroid: {
+        fontSize: 13
+    },
+
     imgProduct: {
         width: '100%',
         height: 330,        
         marginRight: 10,
         resizeMode: 'contain',
         textAlign: 'center',  
+    },
+
+    containerIcon: {
+        backgroundColor: '#ebebeb',
+        width: 30,
+        paddingVertical: 7,
+        borderRadius: 100,
+    },
+
+    shareIcon: {
+        color: '#000',
+        textAlign: 'center',
+        fontSize: 15
     },
 
 });
