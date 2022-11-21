@@ -3,15 +3,18 @@ import { IProduct } from '../interfaces/IProduct';
 import { ProductContext } from './ProductContext';
 import { productReducer } from './productReducer';
 import { IProductId } from '../interfaces/ProductId';
+import { IDescriptionProductId } from '../interfaces/IDescriptionProduct';
 
 export interface ProductState{
     products: IProduct;
-    product: IProductId
+    product: IProductId;
+    descriptionProduct: IDescriptionProductId;
 }
 
 const PRODUCT_INITIAL_STATE: ProductState = {
     products: [],
-    product: {}
+    product: {},
+    descriptionProduct: {}
 }
 
 interface Props {
@@ -33,14 +36,23 @@ export const ProductProvider = ({ children }: Props) => {
     }
 
     const getProduct = async (productId: string) => {
-        // const { data: description, isLoading: isLoadingDescription } = useFetch(`https://api.mercadolibre.com/items/${ productId }/description`)
-        const resp = await fetch(`https://api.mercadolibre.com/items/${ productId }`);
 
+        const resp = await fetch(`https://api.mercadolibre.com/items/${ productId }`);
         const data = await resp.json()
 
         dispatch({ type: 'Product - getProduct', payload: data });
 
-        return data
+        return data;
+    }
+
+    const getDescriptionProduct = async (productId: string) => {
+
+        const resp = await fetch(`https://api.mercadolibre.com/items/${ productId }/description`);
+        const data = await resp.json();
+
+        dispatch({ type: 'Product - getDescriptionProduct', payload: data });
+
+        return data;
     }
 
     return (
@@ -49,6 +61,7 @@ export const ProductProvider = ({ children }: Props) => {
 
             getProducts,
             getProduct,
+            getDescriptionProduct
         }}>
             { children }
         </ProductContext.Provider>

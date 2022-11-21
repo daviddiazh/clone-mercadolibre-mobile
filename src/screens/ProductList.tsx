@@ -9,10 +9,12 @@ import IconE from 'react-native-vector-icons/Entypo';
 
 export const ProductListScreen = ({ navigation }: PropsNavigation) => {
 
-    const { getProduct, products } = useContext( ProductContext );
+    const { getProduct, products, getDescriptionProduct } = useContext( ProductContext );
 
     const detailsProduct = (id: any) => {
         getProduct(id);
+        getDescriptionProduct(id);
+        
         navigation.navigate('ProductDetailsScreen');
     }
     

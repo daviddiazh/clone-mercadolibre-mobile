@@ -9,7 +9,9 @@ import { HeaderMain } from '../components/HeaderMain';
 
 export const ProductDetailsScreen = ({ navigation }: PropsNavigation) => {
 
-    const { product } = useContext( ProductContext );
+    const { product, descriptionProduct } = useContext( ProductContext );
+
+    console.log('descriptionProduct: ', descriptionProduct);
 
     return (
         <Fragment>
@@ -171,6 +173,25 @@ export const ProductDetailsScreen = ({ navigation }: PropsNavigation) => {
                                 Compartir
                             </Text>
                         </View>
+                    </View>
+
+                    <View>
+                        <Text 
+                            style={[
+                                styles.titleDescription,
+                                Platform.OS === 'android' ? styles.titleDescriptionAndroid : null,
+                            ]}
+                        >
+                            Descripción
+                        </Text>
+                        <Text
+                            style={[
+                                styles.descriptionText,
+                                Platform.OS === 'android' ? styles.descriptionTextAndroid : null,
+                            ]}
+                        >
+                            { descriptionProduct.plain_text }
+                        </Text>
                     </View>
                     
                 </View>
@@ -392,6 +413,25 @@ const styles = StyleSheet.create({
 
     iconsBtnsAndroid: {
         fontSize: 16,
+    },
+
+    titleDescription: {
+        color: '#000',
+        fontSize: 18,
+        paddingVertical: 30,
+    },
+
+    titleDescriptionAndroid: {
+        fontSize: 21,
+    },
+
+    descriptionText: {
+        color: '#000',
+        fontSize: 13,
+    },
+
+    descriptionTextAndroid: {
+        fontSize: 16
     }
 
 });
