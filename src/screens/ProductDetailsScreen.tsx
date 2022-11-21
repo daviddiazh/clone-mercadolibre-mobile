@@ -99,14 +99,14 @@ export const ProductDetailsScreen = ({ navigation }: PropsNavigation) => {
                         >Más información</Text>
                     </View>
 
-                    <Text>Llega gratis el jueves</Text>
-                    <Text>Enviar a Medellin, Antioquia</Text>
-
-                    <Text>Retira gratis a partir del viernes en una agencia de Mercado Libre</Text>
-                    <Text>Comprando dentro de las próximas 3 h 54 min</Text>
-                    <Text>Ver en el mapa</Text>
-
-                    <Text>Stock disponible</Text>
+                    <Text
+                        style={[
+                            styles.stockTitle,
+                            Platform.OS === 'android' ? styles.stockTitleAndroid : null,
+                        ]}
+                    >
+                        Stock disponible
+                    </Text>
 
                     <View style={[ styles.quantityContainer ]}>
                         <Text 
@@ -124,19 +124,52 @@ export const ProductDetailsScreen = ({ navigation }: PropsNavigation) => {
                         <Text style={[ styles.buyNow_text, Platform.OS === 'android' ? styles.buyNow_textAndroid : null, ]}>Comprar ahora</Text>
                     </View>
 
-                    <View>
-                        <Text>Agregar al carrito</Text>
+                    <View style={[ styles.addToCart ]}>
+                        <Text 
+                            style={[ 
+                                styles.addToCart_text,
+                                Platform.OS === 'android' ? styles.addToCart_textAndroid : null,
+                            ]}
+                        >
+                            Agregar al carrito
+                        </Text>
                     </View>
 
-                    <View>
-                        <View>
-                            <IconAD name="hearto" />
-                            <Text>Agregar a favoritos</Text>
+                    <View style={[ styles.btnsAddtoFavoriteAndShare ]}>
+                        <View style={[ styles.containerIcons ]}>
+                            <IconAD 
+                                name="hearto"
+                                style={[
+                                    styles.iconsBtns,
+                                    Platform.OS === 'android' ? styles.iconsBtnsAndroid : null,
+                                ]}
+                            />
+                            <Text 
+                                style={[
+                                    styles.textBtnsIcons,
+                                    Platform.OS === 'android' ? styles.textBtnsIconsAndroid : null,
+                                ]}
+                            >
+                                Agregar a favoritos
+                            </Text>
                         </View>
 
-                        <View>
-                            <IconAD name="sharealt" />
-                            <Text>Compartir</Text>
+                        <View style={[ styles.containerIcons ]}>
+                            <IconAD 
+                                name="sharealt" 
+                                style={[
+                                    styles.iconsBtns,
+                                    Platform.OS === 'android' ? styles.iconsBtnsAndroid : null,
+                                ]}
+                            />
+                            <Text 
+                                style={[
+                                    styles.textBtnsIcons,
+                                    Platform.OS === 'android' ? styles.textBtnsIconsAndroid : null,
+                                ]}
+                            >
+                                Compartir
+                            </Text>
                         </View>
                     </View>
                     
@@ -261,6 +294,16 @@ const styles = StyleSheet.create({
         paddingLeft: 3,
     },
 
+    stockTitle: {
+        color: '#000',
+        fontWeight: "500",
+        fontSize: 14,
+        marginTop: 20
+    },
+
+    stockTitleAndroid: {
+        fontSize: 17,
+    },
 
     quantityContainer: {
         backgroundColor: '#f1f1f1',
@@ -299,6 +342,56 @@ const styles = StyleSheet.create({
 
     buyNow_textAndroid: {
         fontSize: 17,
+    },
+
+    addToCart: {
+        backgroundColor: '#4189e626',
+        paddingHorizontal: 10,
+        paddingVertical: 15,
+        borderRadius: 5,
+        marginTop: 10
+    },
+
+    addToCart_text: {
+        color: '#1259c3',
+        textAlign: 'center',
+        fontSize: 14,
+        fontWeight: "600"
+    },
+
+    addToCart_textAndroid: {
+        fontSize: 17,
+    },
+
+    btnsAddtoFavoriteAndShare: {
+        flexDirection: 'row',
+        marginTop: 30,
+        justifyContent: 'center',
+    },
+
+    containerIcons: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingHorizontal: 10
+    },
+
+    textBtnsIcons: {
+        color: '#307df0',
+        fontSize: 14,
+        paddingLeft: 5        
+    },
+
+    textBtnsIconsAndroid: {
+        fontSize: 17,
+    },
+
+    iconsBtns: {
+        color: '#307df0',
+        fontSize: 13,
+    },
+
+    iconsBtnsAndroid: {
+        fontSize: 16,
     }
 
 });
